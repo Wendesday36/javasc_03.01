@@ -13,4 +13,5 @@ function megjelenit(lista){
         
     }
     szuloElem = document.querySelectorAll("article");
+    szuloElem[0].innerHTML=txt;
 }
