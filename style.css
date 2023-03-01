@@ -2,10 +2,15 @@ article{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    
+    justify-content: space-between;
 }
 div{
     border: 1px black solid;
     padding: 10px;
-
+    flex: 0 0 calc(25% - 10px - 20px);
+}
+@media screen and (max-width:400px) {
+    article div{
+        flex:0 0 calc(50% - 10px);
+    }
 }
