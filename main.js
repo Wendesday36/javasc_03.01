@@ -42,19 +42,46 @@ function init() {
     },
   ]; //javascriptben az objektum kulcs ertek parokat jelent
   console.log(objList);
-  const txt = megjelenit(objList);
+ 
   szuloElem = document.querySelectorAll("article");
-  kiir(szuloElem, txt);
+  const tablazatSzuloelem = document.querySelectorAll("#tablazat");
+  const txt = osszeallit(objList);
+  const tablazatSzoveg = tablazatMegjelenit(objList);
+  
+  megjelenit(txt, szuloElem);
+  megjelenit(tablazatSzuloelem,tablazatSzoveg);
 }
-function megjelenit(objList) {
+function osszeallit(objList) {
   let txt = "";
   for (let index = 0; index < objList.length; index++) {
-    txt += "<div><h3>"+objList[index].nev+"</h3><p>" + objList[index].mondat + "</p></div>";
-    console.log(objList[index])
+    txt +=
+      "<div><h3>" +
+      objList[index].nev +
+      "</h3><p>" +
+      objList[index].mondat +
+      "</p></div>";
+    console.log(objList[index]);
   }
-  
+
   return txt;
 }
-function kiir(szuloElem, txt) {
+function megjelenit(szuloElem, txt) {
   szuloElem[0].innerHTML = txt;
+}
+function tablazatMegjelenit(lista) {
+  let tablazatSzoveg = `<table>
+  <tr>
+    <th>név:</th>
+    <th>mondat:</th>
+    
+  </tr>`;
+  for (let index = 0; index < lista.length; index++) {
+    tablazatSzoveg += `<tr>
+    <td>`+lista[index].nev+`</td>
+    <td>`+lista[index].mondat+`</td>
+   
+  </tr>`;
+  }
+  tablazatSzoveg += "</table>";
+  return tablazatSzoveg;
 }

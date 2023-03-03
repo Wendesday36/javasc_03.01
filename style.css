@@ -9,6 +9,10 @@ div{
     padding: 10px;
     flex: 0 0 calc(25% - 10px - 20px);
 }
+#tablazat td{
+    padding: 5px;
+    border: 1px gray solid;
+}
 @media screen and (max-width:400px) {
     article div{
         flex:0 0 calc(50% - 10px);
